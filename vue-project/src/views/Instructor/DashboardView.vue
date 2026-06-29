@@ -13,7 +13,7 @@ const user = authStore().user;
             <RouterLink to="/instructor/courses" class="btn btn-outline-primary">
                 Your Courses
             </RouterLink>
-            <RouterLink to="/instructor/students" class="btn btn-outline-primary">
+            <RouterLink to="/students" class="btn btn-outline-primary">
                 Your Students
             </RouterLink>
         </div>

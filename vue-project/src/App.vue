@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
-import AppLayout from '@/componenets/shared/appLayout.vue';
+import AppLayout from '@/componenets/shared/AppLayout.vue';
 import loginView from './views/Auth/loginView.vue';
 const route = useRoute();
 
