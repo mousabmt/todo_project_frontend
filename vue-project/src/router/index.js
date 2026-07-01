@@ -55,7 +55,7 @@ const router = createRouter({
     {
       path: "/chat/rooms/:room",
       name: "chatRoom",
-      component: () => import("@/views/Chat/ChatRoomView.vue"),
+      component: () => import("@/views/chatRoomView.vue"),
       props: true,
       meta: { authRequired: true, layout: "AppLayout" },
     },
@@ -77,6 +77,14 @@ const router = createRouter({
       path: "/student/instructor/:id/courses",
       name: "studentInstructorCourses",
       component: () => import("@/views/Student/InstructorCoursesView.vue"),
+      props: true,
+      meta: { authRequired: true, role: "student", layout: "AppLayout" },
+    },
+    // ↓ new
+    {
+      path: "/student/instructor/:instructor/chats",
+      name: "studentInstructorChats",
+      component: () => import("@/views/chatRoomView.vue"),
       props: true,
       meta: { authRequired: true, role: "student", layout: "AppLayout" },
     },
@@ -102,9 +110,8 @@ router.beforeEach((to) => {
     if (to.meta.role && to.meta.role !== auth.user?.role) {
       return { name: "unauthorized" };
     }
-  }else{
-    console.log('Unauthorized');
-
+  } else {
+    console.log("Unauthorized");
   }
 });
 

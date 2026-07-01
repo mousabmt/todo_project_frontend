@@ -32,10 +32,11 @@ const { data, isLoading, error } = useStudentInstructors();
       <a href="/" class="btn btn-outline-primary">
         {{ instructor.user.first_name }} {{ instructor.user.last_name }}
       </a>
-      <RouterLink :to="{ name: 'studentInstructorCourses', params: { id: instructor.user.id } }" class="btn btn-outline-success"
+      <RouterLink :to="{ name: 'studentInstructorChats', params: { instructor: instructor.id } }"
+        class="btn btn-outline-success"
         :aria-label="`Open chat with ${instructor.user.first_name} ${instructor.user.last_name}`">
         <i class="bi bi-chat-dots"></i>
-      </RouterLink>
+      </RouterLink>>
     </div>
   </div>
 </template>
